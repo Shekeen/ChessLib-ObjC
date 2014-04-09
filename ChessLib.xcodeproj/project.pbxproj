@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB92B0E318F52C1F00597048 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB92B0E218F52C1F00597048 /* Foundation.framework */; };
+		CB92B0E818F52C1F00597048 /* ChessLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB92B0E718F52C1F00597048 /* ChessLib.h */; };
+		CB92B0EA18F52C1F00597048 /* ChessLib.m in Sources */ = {isa = PBXBuildFile; fileRef = CB92B0E918F52C1F00597048 /* ChessLib.m */; };
+		CB92B0F118F52C1F00597048 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB92B0F018F52C1F00597048 /* XCTest.framework */; };
+		CB92B0F218F52C1F00597048 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB92B0E218F52C1F00597048 /* Foundation.framework */; };
+		CB92B0F418F52C1F00597048 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB92B0F318F52C1F00597048 /* UIKit.framework */; };
+		CB92B0F718F52C1F00597048 /* libChessLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB92B0DF18F52C1F00597048 /* libChessLib.a */; };
+		CB92B0FD18F52C1F00597048 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB92B0FB18F52C1F00597048 /* InfoPlist.strings */; };
+		CB92B0FF18F52C1F00597048 /* ChessLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB92B0FE18F52C1F00597048 /* ChessLibTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB92B0F518F52C1F00597048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB92B0D718F52C1F00597048 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB92B0DE18F52C1F00597048;
+			remoteInfo = ChessLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB92B0DD18F52C1F00597048 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CB92B0E818F52C1F00597048 /* ChessLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CB92B0DF18F52C1F00597048 /* libChessLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChessLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB92B0E218F52C1F00597048 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CB92B0E618F52C1F00597048 /* ChessLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChessLib-Prefix.pch"; sourceTree = "<group>"; };
+		CB92B0E718F52C1F00597048 /* ChessLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessLib.h; sourceTree = "<group>"; };
+		CB92B0E918F52C1F00597048 /* ChessLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessLib.m; sourceTree = "<group>"; };
+		CB92B0EF18F52C1F00597048 /* ChessLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB92B0F018F52C1F00597048 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CB92B0F318F52C1F00597048 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		CB92B0FA18F52C1F00597048 /* ChessLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChessLibTests-Info.plist"; sourceTree = "<group>"; };
+		CB92B0FC18F52C1F00597048 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB92B0FE18F52C1F00597048 /* ChessLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessLibTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB92B0DC18F52C1F00597048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB92B0E318F52C1F00597048 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB92B0EC18F52C1F00597048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB92B0F718F52C1F00597048 /* libChessLib.a in Frameworks */,
+				CB92B0F118F52C1F00597048 /* XCTest.framework in Frameworks */,
+				CB92B0F418F52C1F00597048 /* UIKit.framework in Frameworks */,
+				CB92B0F218F52C1F00597048 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB92B0D618F52C1F00597048 = {
+			isa = PBXGroup;
+			children = (
+				CB92B0E418F52C1F00597048 /* ChessLib */,
+				CB92B0F818F52C1F00597048 /* ChessLibTests */,
+				CB92B0E118F52C1F00597048 /* Frameworks */,
+				CB92B0E018F52C1F00597048 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB92B0E018F52C1F00597048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB92B0DF18F52C1F00597048 /* libChessLib.a */,
+				CB92B0EF18F52C1F00597048 /* ChessLibTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB92B0E118F52C1F00597048 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB92B0E218F52C1F00597048 /* Foundation.framework */,
+				CB92B0F018F52C1F00597048 /* XCTest.framework */,
+				CB92B0F318F52C1F00597048 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB92B0E418F52C1F00597048 /* ChessLib */ = {
+			isa = PBXGroup;
+			children = (
+				CB92B0E718F52C1F00597048 /* ChessLib.h */,
+				CB92B0E918F52C1F00597048 /* ChessLib.m */,
+				CB92B0E518F52C1F00597048 /* Supporting Files */,
+			);
+			path = ChessLib;
+			sourceTree = "<group>";
+		};
+		CB92B0E518F52C1F00597048 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB92B0E618F52C1F00597048 /* ChessLib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB92B0F818F52C1F00597048 /* ChessLibTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB92B0FE18F52C1F00597048 /* ChessLibTests.m */,
+				CB92B0F918F52C1F00597048 /* Supporting Files */,
+			);
+			path = ChessLibTests;
+			sourceTree = "<group>";
+		};
+		CB92B0F918F52C1F00597048 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB92B0FA18F52C1F00597048 /* ChessLibTests-Info.plist */,
+				CB92B0FB18F52C1F00597048 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB92B0DE18F52C1F00597048 /* ChessLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB92B10218F52C1F00597048 /* Build configuration list for PBXNativeTarget "ChessLib" */;
+			buildPhases = (
+				CB92B0DB18F52C1F00597048 /* Sources */,
+				CB92B0DC18F52C1F00597048 /* Frameworks */,
+				CB92B0DD18F52C1F00597048 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChessLib;
+			productName = ChessLib;
+			productReference = CB92B0DF18F52C1F00597048 /* libChessLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CB92B0EE18F52C1F00597048 /* ChessLibTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB92B10518F52C1F00597048 /* Build configuration list for PBXNativeTarget "ChessLibTests" */;
+			buildPhases = (
+				CB92B0EB18F52C1F00597048 /* Sources */,
+				CB92B0EC18F52C1F00597048 /* Frameworks */,
+				CB92B0ED18F52C1F00597048 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB92B0F618F52C1F00597048 /* PBXTargetDependency */,
+			);
+			name = ChessLibTests;
+			productName = ChessLibTests;
+			productReference = CB92B0EF18F52C1F00597048 /* ChessLibTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB92B0D718F52C1F00597048 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = CB92B0DA18F52C1F00597048 /* Build configuration list for PBXProject "ChessLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CB92B0D618F52C1F00597048;
+			productRefGroup = CB92B0E018F52C1F00597048 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB92B0DE18F52C1F00597048 /* ChessLib */,
+				CB92B0EE18F52C1F00597048 /* ChessLibTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB92B0ED18F52C1F00597048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB92B0FD18F52C1F00597048 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB92B0DB18F52C1F00597048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB92B0EA18F52C1F00597048 /* ChessLib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB92B0EB18F52C1F00597048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB92B0FF18F52C1F00597048 /* ChessLibTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB92B0F618F52C1F00597048 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB92B0DE18F52C1F00597048 /* ChessLib */;
+			targetProxy = CB92B0F518F52C1F00597048 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB92B0FB18F52C1F00597048 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB92B0FC18F52C1F00597048 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB92B10018F52C1F00597048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CB92B10118F52C1F00597048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB92B10318F52C1F00597048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ChessLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChessLib/ChessLib-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB92B10418F52C1F00597048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ChessLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChessLib/ChessLib-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CB92B10618F52C1F00597048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChessLib/ChessLib-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ChessLibTests/ChessLibTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CB92B10718F52C1F00597048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChessLib/ChessLib-Prefix.pch";
+				INFOPLIST_FILE = "ChessLibTests/ChessLibTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB92B0DA18F52C1F00597048 /* Build configuration list for PBXProject "ChessLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB92B10018F52C1F00597048 /* Debug */,
+				CB92B10118F52C1F00597048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB92B10218F52C1F00597048 /* Build configuration list for PBXNativeTarget "ChessLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB92B10318F52C1F00597048 /* Debug */,
+				CB92B10418F52C1F00597048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB92B10518F52C1F00597048 /* Build configuration list for PBXNativeTarget "ChessLibTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB92B10618F52C1F00597048 /* Debug */,
+				CB92B10718F52C1F00597048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB92B0D718F52C1F00597048 /* Project object */;
+}
