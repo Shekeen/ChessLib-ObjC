@@ -37,6 +37,11 @@
                BlueprintName = "ChessLibTests"
                ReferencedContainer = "container:ChessLib.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ChessLibTests/testExample">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

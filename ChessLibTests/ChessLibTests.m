@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ChessPiece.h"
 
 @interface ChessLibTests : XCTestCase
 
@@ -26,9 +27,33 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+-(void)testKingMoveChecker {
+    King* kingPiece = [[King alloc] initWithOwner:0];
+
+    Cell from = { .row = 5, .col = 0 };
+    Cell to = { .row = 5, .col = 1 };
+    XCTAssert([kingPiece isMovePossibleFrom:from To:to]);
+    
+    from.col = 2;
+    XCTAssert([kingPiece isMovePossibleFrom:from To:to]);
+    
+    to.row = 3;
+    XCTAssertFalse([kingPiece isMovePossibleFrom:from To:to]);
+}
+
+-(void)testQueenMoveChecker {
+    Queen* queenPiece = [[Queen alloc] initWithOwner:0];
+    
+    Cell from = { .row = 3, .col = 0 };
+    Cell to = { .row = 6, .col = 3 };
+    XCTAssert([queenPiece isMovePossibleFrom:from To:to]);
+    
+    to.row = 1;
+    to.col = 2;
+    XCTAssert([queenPiece isMovePossibleFrom:from To:to]);
+    
+    to.col = 3;
+    XCTAssertFalse([queenPiece isMovePossibleFrom:from To:to]);
 }
 
 @end
