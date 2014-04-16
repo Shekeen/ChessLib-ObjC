@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB71F8FD18FC15AB000EB71E /* ChessPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = CB71F8FC18FC15AB000EB71E /* ChessPiece.m */; };
 		CB92B0E318F52C1F00597048 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB92B0E218F52C1F00597048 /* Foundation.framework */; };
 		CB92B0E818F52C1F00597048 /* ChessLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB92B0E718F52C1F00597048 /* ChessLib.h */; };
 		CB92B0EA18F52C1F00597048 /* ChessLib.m in Sources */ = {isa = PBXBuildFile; fileRef = CB92B0E918F52C1F00597048 /* ChessLib.m */; };
@@ -16,6 +17,7 @@
 		CB92B0F718F52C1F00597048 /* libChessLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB92B0DF18F52C1F00597048 /* libChessLib.a */; };
 		CB92B0FD18F52C1F00597048 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB92B0FB18F52C1F00597048 /* InfoPlist.strings */; };
 		CB92B0FF18F52C1F00597048 /* ChessLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB92B0FE18F52C1F00597048 /* ChessLibTests.m */; };
+		CB92B10A18F52CF700597048 /* ChessBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = CB92B10918F52CF700597048 /* ChessBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB71F8FB18FC15AB000EB71E /* ChessPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessPiece.h; sourceTree = "<group>"; };
+		CB71F8FC18FC15AB000EB71E /* ChessPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessPiece.m; sourceTree = "<group>"; };
 		CB92B0DF18F52C1F00597048 /* libChessLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChessLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB92B0E218F52C1F00597048 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB92B0E618F52C1F00597048 /* ChessLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChessLib-Prefix.pch"; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 		CB92B0FA18F52C1F00597048 /* ChessLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChessLibTests-Info.plist"; sourceTree = "<group>"; };
 		CB92B0FC18F52C1F00597048 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB92B0FE18F52C1F00597048 /* ChessLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessLibTests.m; sourceTree = "<group>"; };
+		CB92B10818F52CF700597048 /* ChessBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessBoard.h; sourceTree = "<group>"; };
+		CB92B10918F52CF700597048 /* ChessBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,10 @@
 			children = (
 				CB92B0E718F52C1F00597048 /* ChessLib.h */,
 				CB92B0E918F52C1F00597048 /* ChessLib.m */,
+				CB92B10818F52CF700597048 /* ChessBoard.h */,
+				CB92B10918F52CF700597048 /* ChessBoard.m */,
+				CB71F8FB18FC15AB000EB71E /* ChessPiece.h */,
+				CB71F8FC18FC15AB000EB71E /* ChessPiece.m */,
 				CB92B0E518F52C1F00597048 /* Supporting Files */,
 			);
 			path = ChessLib;
@@ -224,6 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB92B0EA18F52C1F00597048 /* ChessLib.m in Sources */,
+				CB71F8FD18FC15AB000EB71E /* ChessPiece.m in Sources */,
+				CB92B10A18F52CF700597048 /* ChessBoard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +416,7 @@
 				CB92B10418F52C1F00597048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB92B10518F52C1F00597048 /* Build configuration list for PBXNativeTarget "ChessLibTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +425,7 @@
 				CB92B10718F52C1F00597048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
