@@ -44,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB51600F18FE97850021DF5F /* Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		CB71F8FB18FC15AB000EB71E /* ChessPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessPiece.h; sourceTree = "<group>"; };
 		CB71F8FC18FC15AB000EB71E /* ChessPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessPiece.m; sourceTree = "<group>"; };
 		CB92B0DF18F52C1F00597048 /* libChessLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChessLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +117,7 @@
 		CB92B0E418F52C1F00597048 /* ChessLib */ = {
 			isa = PBXGroup;
 			children = (
+				CB51600F18FE97850021DF5F /* Cell.h */,
 				CB92B0E718F52C1F00597048 /* ChessLib.h */,
 				CB92B0E918F52C1F00597048 /* ChessLib.m */,
 				CB92B10818F52CF700597048 /* ChessBoard.h */,

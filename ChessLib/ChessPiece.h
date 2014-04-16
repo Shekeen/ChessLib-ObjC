@@ -7,11 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef struct Cell {
-    int row;
-    int col;
-} Cell;
+#import "Cell.h"
 
 @interface ChessPiece : NSObject {
     int ownerId;

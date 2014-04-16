@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Cell.h"
 
 @interface ChessBoard : NSObject {
     NSMutableArray *board;

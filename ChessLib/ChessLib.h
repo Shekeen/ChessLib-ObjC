@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Cell.h"
 
 @interface ChessLib : NSObject
 
