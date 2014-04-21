@@ -13,7 +13,7 @@ static size_t BOARD_SIZE = 64;
 
 @implementation ChessBoard
 
-+(int) stringToCellCoord:(NSString*)str {
++(int)stringToBoardCoord:(NSString*)str {
     char coord[3];
     if (![[str lowercaseString] getCString:coord
                                 maxLength:3
@@ -30,7 +30,7 @@ static size_t BOARD_SIZE = 64;
     return row + 8*col;
 }
 
-+(NSString*) cellCoordToString:(int)coord {
++(NSString*)boardCoordToString:(int)coord {
     if (coord < 0 || coord > 63)
         return nil;
     
@@ -42,11 +42,11 @@ static size_t BOARD_SIZE = 64;
     return [NSString stringWithCString:coordStr encoding:NSASCIIStringEncoding];
 }
 
--(id) init {
+-(id)init {
     return [self initWithFENPosition:FEN_STARTING_POSITION];
 }
 
--(id) initWithFENPosition:(NSString *)fen {
+-(id)initWithFENPosition:(NSString *)fen {
     self = [super init];
     board = [[NSMutableArray alloc] initWithCapacity:BOARD_SIZE];
     for (size_t i = 0; i < BOARD_SIZE; i++) {
@@ -55,7 +55,7 @@ static size_t BOARD_SIZE = 64;
     return self;
 }
 
--(void) moveFrom:(size_t)from To:(size_t)to {
+-(void)moveFrom:(size_t)from To:(size_t)to {
 }
 
 @end

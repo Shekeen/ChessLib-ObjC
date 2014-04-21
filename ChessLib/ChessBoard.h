@@ -13,8 +13,8 @@
     NSMutableArray *board;
 }
 
-+(int)stringToCellCoord:(NSString*)str;
-+(NSString*)cellCoordToString:(int)coord;
++(int)stringToBoardCoord:(NSString*)str;
++(NSString*)boardCoordToString:(int)coord;
 
 -(id)init;
 -(id)initWithFENPosition:(NSString*)fen;
