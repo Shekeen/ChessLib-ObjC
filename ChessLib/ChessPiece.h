@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
-@interface ChessPiece : NSObject {
-    int ownerId;
-}
+@interface ChessPiece : NSObject
 
+@property int ownerId;
 @property BOOL hasMoved;
 
 -(id)initWithOwner:(int)owner;

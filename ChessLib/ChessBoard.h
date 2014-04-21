@@ -18,6 +18,6 @@
 
 -(id)init;
 -(id)initWithFENPosition:(NSString*)fen;
--(void)moveFrom:(size_t)from To:(size_t)to;
+-(id)moveFrom:(size_t)from To:(size_t)to;
 
 @end

@@ -10,10 +10,11 @@
 
 @implementation ChessPiece
 
+@synthesize ownerId;
 @synthesize hasMoved;
 
 -(id)initWithOwner:(int)owner {
-    ownerId = owner;
+    [self setOwnerId:owner];
     [self setHasMoved:FALSE];
     return self;
 }

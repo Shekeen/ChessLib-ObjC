@@ -55,7 +55,11 @@ static size_t BOARD_SIZE = 64;
     return self;
 }
 
--(void)moveFrom:(size_t)from To:(size_t)to {
+-(id)moveFrom:(size_t)from To:(size_t)to {
+    id destObject = board[to];
+    board[to] = board[from];
+    board[from] = [NSNull null];
+    return destObject;
 }
 
 @end
