@@ -7,6 +7,7 @@
 //
 
 #import "ChessBoard.h"
+#import "ChessPiece.h"
 
 static NSString* FEN_STARTING_POSITION = @"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
 static size_t BOARD_SIZE = 64;
@@ -49,9 +50,65 @@ static size_t BOARD_SIZE = 64;
 -(id)initWithFENPosition:(NSString *)fen {
     self = [super init];
     board = [[NSMutableArray alloc] initWithCapacity:BOARD_SIZE];
-    for (size_t i = 0; i < BOARD_SIZE; i++) {
-        [board addObject:nil];
+    
+    const char* fen_str = [fen cStringUsingEncoding:NSASCIIStringEncoding];
+    size_t fen_length = strlen(fen_str);
+    for (size_t fen_idx = 0; fen_idx < fen_length; fen_idx++) {
+        char cur_char = fen_str[fen_idx];
+        if (islower(cur_char)) {
+            switch (cur_char) {
+            case 'r':
+                [board addObject:[[Rook alloc] initWithOwner:0]];
+                break;
+            case 'n':
+                [board addObject:[[Knight alloc] initWithOwner:0]];
+                break;
+            case 'b':
+                [board addObject:[[Bishop alloc] initWithOwner:0]];
+                break;
+            case 'q':
+                [board addObject:[[Queen alloc] initWithOwner:0]];
+                break;
+            case 'k':
+                [board addObject:[[King alloc] initWithOwner:0]];
+                break;
+            case 'p':
+                [board addObject:[[Pawn alloc] initWithOwner:0]];
+                break;
+            default:
+                break;
+            }
+        } else if (isupper(cur_char)) {
+            switch (cur_char) {
+            case 'R':
+                [board addObject:[[Rook alloc] initWithOwner:1]];
+                break;
+            case 'N':
+                [board addObject:[[Knight alloc] initWithOwner:1]];
+                break;
+            case 'B':
+                [board addObject:[[Bishop alloc] initWithOwner:1]];
+                break;
+            case 'Q':
+                [board addObject:[[Queen alloc] initWithOwner:1]];
+                break;
+            case 'K':
+                [board addObject:[[King alloc] initWithOwner:1]];
+                break;
+            case 'P':
+                [board addObject:[[Pawn alloc] initWithOwner:1]];
+                break;
+            default:
+                break;
+            }
+        } else if (isdigit(cur_char)) {
+            size_t digit = cur_char - '0';
+            for (size_t i = 0; i < digit; i++)
+                [board addObject:[NSNull null]];
+        }
     }
+    assert([board count] == BOARD_SIZE);
+    
     return self;
 }
 
@@ -60,6 +117,10 @@ static size_t BOARD_SIZE = 64;
     board[to] = board[from];
     board[from] = [NSNull null];
     return destObject;
+}
+
+-(NSString*)dumpToFENPosition {
+    return @"";
 }
 
 @end
