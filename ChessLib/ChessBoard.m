@@ -7,7 +7,6 @@
 //
 
 #import "ChessBoard.h"
-#import "ChessPiece.h"
 
 static NSString* FEN_STARTING_POSITION = @"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
 static size_t BOARD_SIZE = 64;
@@ -41,6 +40,24 @@ static size_t BOARD_SIZE = 64;
     coordStr[2] = '\0';
     
     return [NSString stringWithCString:coordStr encoding:NSASCIIStringEncoding];
+}
+
++(NSString*)chessPieceToString:(ChessPiece*)chessPiece {
+    if ([chessPiece isMemberOfClass:[King class]]) {
+        return [chessPiece ownerId] == 0 ? @"k" : @"K";
+    } else if ([chessPiece isMemberOfClass:[Queen class]]) {
+        return [chessPiece ownerId] == 0 ? @"q" : @"Q";
+    } else if ([chessPiece isMemberOfClass:[Bishop class]]) {
+        return [chessPiece ownerId] == 0 ? @"b" : @"B";
+    } else if ([chessPiece isMemberOfClass:[Knight class]]) {
+        return [chessPiece ownerId] == 0 ? @"n" : @"N";
+    } else if ([chessPiece isMemberOfClass:[Rook class]]) {
+        return [chessPiece ownerId] == 0 ? @"r" : @"R";
+    } else if ([chessPiece isMemberOfClass:[Pawn class]]) {
+        return [chessPiece ownerId] == 0 ? @"p" : @"P";
+    } else {
+        return @"";
+    }
 }
 
 -(id)init {
@@ -120,7 +137,36 @@ static size_t BOARD_SIZE = 64;
 }
 
 -(NSString*)dumpToFENPosition {
-    return @"";
+    NSMutableString* ans = [[NSMutableString alloc] initWithCapacity:70];
+    size_t board_len = [board count];
+    size_t empty_count = 0;
+    
+    for (size_t i = 0; i < board_len; i++) {
+        if (i != 0 && i % 8 == 0) {
+            if (empty_count > 0) {
+                [ans appendFormat:@"%zu", empty_count];
+                empty_count = 0;
+            }
+            [ans appendString:@"/"];
+        }
+        
+        if (board[i] == [NSNull null]) {
+            empty_count++;
+        } else if ([board[i] isKindOfClass:[ChessPiece class]]) {
+            if (empty_count > 0) {
+                [ans appendFormat:@"%zu", empty_count];
+                empty_count = 0;
+            }
+            [ans appendString:[ChessBoard chessPieceToString:(ChessPiece*)board[i]]];
+        } else {
+            empty_count++;
+            NSLog(@"Strange stuff in board array at %zu: %@", i, board[i]);
+        }
+    }
+    if (empty_count > 0)
+        [ans appendFormat:@"%zu", empty_count];
+    
+    return (NSString*)ans;
 }
 
 @end
