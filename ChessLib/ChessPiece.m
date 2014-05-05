@@ -56,7 +56,7 @@
 
 -(NSArray*)getIntermediateCoordsFrom:(Cell)from To:(Cell)to {
     NSMutableArray* cells = [NSMutableArray array];
-    
+
     BOOL isMoveVertical = from.col == to.col;
     if (isMoveVertical) {
         int fromRow = MIN(from.row, to.row) + 1;
@@ -68,7 +68,7 @@
         }
         return (NSArray*)cells;
     }
-    
+
     BOOL isMoveHorizontal = from.row == to.row;
     if (isMoveHorizontal) {
         int fromCol = MIN(from.col, to.col) + 1;
@@ -80,7 +80,7 @@
         }
         return (NSArray*)cells;
     }
-    
+
     BOOL isMoveDiagonal = abs(from.col - to.col) == abs(from.row - to.row);
     if (isMoveDiagonal) {
         int fromRow = MIN(from.row, to.row) + 1;
@@ -94,7 +94,7 @@
         }
         return (NSArray*)cells;
     }
-    
+
     return (NSArray*)cells;
 }
 
@@ -108,7 +108,7 @@
 
 -(NSArray*)getIntermediateCoordsFrom:(Cell)from To:(Cell)to {
     NSMutableArray* cells = [NSMutableArray array];
-    
+
     BOOL isMoveVertical = from.col == to.col;
     if (isMoveVertical) {
         int fromRow = MIN(from.row, to.row) + 1;
@@ -120,7 +120,7 @@
         }
         return (NSArray*)cells;
     }
-    
+
     BOOL isMoveHorizontal = from.row == to.row;
     if (isMoveHorizontal) {
         int fromCol = MIN(from.col, to.col) + 1;
@@ -132,7 +132,7 @@
         }
         return (NSArray*)cells;
     }
-    
+
     return (NSArray*)cells;
 }
 
@@ -159,7 +159,7 @@
 
 -(NSArray*)getIntermediateCoordsFrom:(Cell)from To:(Cell)to {
     NSMutableArray* cells = [NSMutableArray array];
-    
+
     BOOL isMoveDiagonal = abs(from.col - to.col) == abs(from.row - to.row);
     if (isMoveDiagonal) {
         int fromRow = MIN(from.row, to.row) + 1;
@@ -173,7 +173,7 @@
         }
         return (NSArray*)cells;
     }
-    
+
     return (NSArray*)cells;
 }
 
@@ -192,14 +192,14 @@
 
 -(NSArray*)getIntermediateCoordsFrom:(Cell)from To:(Cell)to {
     NSMutableArray* cells = [NSMutableArray array];
-    
+
     BOOL isEnPassant = from.col == to.col && to.row - from.row == 2;
     if (isEnPassant) {
         Cell cell = { .row = from.row + 1, .col = from.col };
         NSValue* val = [NSValue valueWithBytes:&cell objCType:@encode(Cell)];
         [cells addObject:val];
     }
-    
+
     return (NSArray*)cells;
 }
 

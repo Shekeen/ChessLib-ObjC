@@ -21,7 +21,7 @@ static size_t BOARD_SIZE = 64;
     {
         return -1;
     }
-    
+
     int col = coord[0] - 'a';
     int row = coord[1] - '1';
     if (col < 0 || col > 7 || row < 0 || row > 7)
@@ -33,12 +33,12 @@ static size_t BOARD_SIZE = 64;
 +(NSString*)boardCoordToString:(int)coord {
     if (coord < 0 || coord > 63)
         return nil;
-    
+
     char coordStr[3];
     coordStr[0] = (char)(coord / 8) + 'a';
     coordStr[1] = (char)(coord % 8) + '1';
     coordStr[2] = '\0';
-    
+
     return [NSString stringWithCString:coordStr encoding:NSASCIIStringEncoding];
 }
 
@@ -67,7 +67,7 @@ static size_t BOARD_SIZE = 64;
 -(id)initWithFENPosition:(NSString *)fen {
     self = [super init];
     board = [[NSMutableArray alloc] initWithCapacity:BOARD_SIZE];
-    
+
     const char* fen_str = [fen cStringUsingEncoding:NSASCIIStringEncoding];
     size_t fen_length = strlen(fen_str);
     for (size_t fen_idx = 0; fen_idx < fen_length; fen_idx++) {
@@ -125,7 +125,7 @@ static size_t BOARD_SIZE = 64;
         }
     }
     assert([board count] == BOARD_SIZE);
-    
+
     return self;
 }
 
@@ -140,7 +140,7 @@ static size_t BOARD_SIZE = 64;
     NSMutableString* ans = [[NSMutableString alloc] initWithCapacity:70];
     size_t board_len = [board count];
     size_t empty_count = 0;
-    
+
     for (size_t i = 0; i < board_len; i++) {
         if (i != 0 && i % 8 == 0) {
             if (empty_count > 0) {
@@ -149,7 +149,7 @@ static size_t BOARD_SIZE = 64;
             }
             [ans appendString:@"/"];
         }
-        
+
         if (board[i] == [NSNull null]) {
             empty_count++;
         } else if ([board[i] isKindOfClass:[ChessPiece class]]) {
@@ -165,7 +165,7 @@ static size_t BOARD_SIZE = 64;
     }
     if (empty_count > 0)
         [ans appendFormat:@"%zu", empty_count];
-    
+
     return (NSString*)ans;
 }
 
