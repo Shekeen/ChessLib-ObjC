@@ -8,16 +8,19 @@
 
 #import "ChessBoard.h"
 
-static NSString* FEN_STARTING_POSITION = @"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
-static size_t BOARD_SIZE = 64;
+static const NSString* FEN_STARTING_POSITION = @"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
+static const size_t BOARD_SIZE = 64;
+static const int NOPLAYER = -1;
+static const int PLAYER1 = 0;
+static const int PLAYER2 = 1;
 
 @implementation ChessBoard
 
 +(int)stringToBoardCoord:(NSString*)str {
     char coord[3];
-    if (![[str lowercaseString] getCString:coord
-                                maxLength:3
-                                encoding:NSASCIIStringEncoding])
+     if (![[str lowercaseString] getCString:coord
+                                 maxLength:3
+                                 encoding:NSASCIIStringEncoding])
     {
         return -1;
     }
@@ -27,7 +30,14 @@ static size_t BOARD_SIZE = 64;
     if (col < 0 || col > 7 || row < 0 || row > 7)
         return -1;
     
-    return row + 8*col;
+    return 8*row + col;
+}
+
++(int)cellToBoardCoord:(Cell)cell {
+    if (cell.row < 0 || cell.row > 7 || cell.col < 0 || cell.col > 7)
+        return -1;
+
+    return 8*cell.row + cell.col;
 }
 
 +(NSString*)boardCoordToString:(int)coord {
@@ -35,11 +45,32 @@ static size_t BOARD_SIZE = 64;
         return nil;
 
     char coordStr[3];
-    coordStr[0] = (char)(coord / 8) + 'a';
-    coordStr[1] = (char)(coord % 8) + '1';
+    coordStr[0] = (char)(coord % 8) + 'a';
+    coordStr[1] = (char)(coord / 8) + '1';
     coordStr[2] = '\0';
 
     return [NSString stringWithCString:coordStr encoding:NSASCIIStringEncoding];
+}
+
++(NSString*)cellToString:(Cell)cell {
+    return [self boardCoordToString: [self cellToBoardCoord: cell]];
+}
+
++(Cell)stringToCell:(NSString*)str {
+    char coord[3];
+    [[str lowercaseString] getCString:coord
+                           maxLength:3
+                           encoding:NSASCIIStringEncoding];
+
+    Cell cell = { .col = coord[0] - 'a', .row = coord[1] - '1' };
+    if (cell.col < 0 || cell.col > 7 || cell.row < 0 || cell.row > 7)
+        cell.row = cell.col = -1;
+
+    return cell;
+}
+
++(Cell)boardCoordToCell:(int)coord {
+    return [self stringToCell: [self boardCoordToString: coord]];
 }
 
 +(NSString*)chessPieceToString:(ChessPiece*)chessPiece {
@@ -75,22 +106,22 @@ static size_t BOARD_SIZE = 64;
         if (islower(cur_char)) {
             switch (cur_char) {
             case 'r':
-                [board addObject:[[Rook alloc] initWithOwner:0]];
+                [board addObject:[[Rook alloc] initWithOwner:PLAYER1]];
                 break;
             case 'n':
-                [board addObject:[[Knight alloc] initWithOwner:0]];
+                [board addObject:[[Knight alloc] initWithOwner:PLAYER1]];
                 break;
             case 'b':
-                [board addObject:[[Bishop alloc] initWithOwner:0]];
+                [board addObject:[[Bishop alloc] initWithOwner:PLAYER1]];
                 break;
             case 'q':
-                [board addObject:[[Queen alloc] initWithOwner:0]];
+                [board addObject:[[Queen alloc] initWithOwner:PLAYER1]];
                 break;
             case 'k':
-                [board addObject:[[King alloc] initWithOwner:0]];
+                [board addObject:[[King alloc] initWithOwner:PLAYER1]];
                 break;
             case 'p':
-                [board addObject:[[Pawn alloc] initWithOwner:0]];
+                [board addObject:[[Pawn alloc] initWithOwner:PLAYER1]];
                 break;
             default:
                 break;
@@ -98,22 +129,22 @@ static size_t BOARD_SIZE = 64;
         } else if (isupper(cur_char)) {
             switch (cur_char) {
             case 'R':
-                [board addObject:[[Rook alloc] initWithOwner:1]];
+                [board addObject:[[Rook alloc] initWithOwner:PLAYER2]];
                 break;
             case 'N':
-                [board addObject:[[Knight alloc] initWithOwner:1]];
+                [board addObject:[[Knight alloc] initWithOwner:PLAYER2]];
                 break;
             case 'B':
-                [board addObject:[[Bishop alloc] initWithOwner:1]];
+                [board addObject:[[Bishop alloc] initWithOwner:PLAYER2]];
                 break;
             case 'Q':
-                [board addObject:[[Queen alloc] initWithOwner:1]];
+                [board addObject:[[Queen alloc] initWithOwner:PLAYER2]];
                 break;
             case 'K':
-                [board addObject:[[King alloc] initWithOwner:1]];
+                [board addObject:[[King alloc] initWithOwner:PLAYER2]];
                 break;
             case 'P':
-                [board addObject:[[Pawn alloc] initWithOwner:1]];
+                [board addObject:[[Pawn alloc] initWithOwner:PLAYER2]];
                 break;
             default:
                 break;
@@ -129,10 +160,21 @@ static size_t BOARD_SIZE = 64;
     return self;
 }
 
+-(id)getPieceAtCoord:(size_t)coord {
+    if (coord >= [board count])
+        return [NSNull null];
+
+    return board[coord];
+}
+
 -(id)moveFrom:(size_t)from To:(size_t)to {
     id destObject = board[to];
     board[to] = board[from];
     board[from] = [NSNull null];
+    if ([board[to] isEqual:[NSNull null]]) {
+        ChessPiece* piece = board[to];
+        [piece setHasMoved:TRUE];
+    }
     return destObject;
 }
 
